@@ -3,6 +3,7 @@
 8 - Biblioteca
 9 - Biblioteconomia(370, 285)
 10 - Fanut, Esenfar e Foufal(330, 315)
+
 11 - ICBS(340, 435)
 13 - CEDU(450, 265)
 14 - Psicologia(450, 345)

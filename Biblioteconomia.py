@@ -1,7 +1,7 @@
 import pygame, sys, os, time
 from pygame.locals import *
 
-class biblioteconomia:
+class Biblioteconomia:
 
     posX = 0
     posY = 0
