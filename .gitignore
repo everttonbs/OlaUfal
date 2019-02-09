@@ -1,8 +1,11 @@
-# Inserções
+﻿# Inserções
 *.json
 *.xlsx
 *.xls
 
+
+.ideia
+__pycache__/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
