@@ -15,7 +15,6 @@ from EdFis import *
 from Famed import *
 from FDA import *
 from FEAC import *
-from Fisica import *
 from Geografia import *
 from IC import *
 from ICAT import *
@@ -195,3 +194,6 @@ class Main:
         pygame.display.update()
 
     pygame.quit()
+
+
+
