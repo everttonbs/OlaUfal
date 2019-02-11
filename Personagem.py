@@ -10,13 +10,13 @@ class Personagem:
         # Classe auxiliar para divisão da folha de sprites
         sprite_manager = SpriteManager('Imagem/sprite_character.png', 576, 385, 12, 8)
         # Número de sprites presentes em cada ação
-        self.frames_per_action = 6
+        self.frames_per_action = 3
         # Dicionário das ações possíveis
         self.sprites = {}
-        self.sprites['down']  = sprite_manager.cells[0:6]
-        self.sprites['left']  = sprite_manager.cells[12:18]
-        self.sprites['right'] = sprite_manager.cells[24:30]
-        self.sprites['up']    = sprite_manager.cells[36:42]
+        self.sprites['down']  = sprite_manager.cells[0: 0+self.frames_per_action]
+        self.sprites['left']  = sprite_manager.cells[12: 12+self.frames_per_action]
+        self.sprites['right'] = sprite_manager.cells[24: 24+self.frames_per_action]
+        self.sprites['up']    = sprite_manager.cells[36: 36+self.frames_per_action]
         # Definindo imagem atual
         self.current_action = 'down'
         self.current_frame = 0
