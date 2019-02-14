@@ -27,7 +27,7 @@ from Letras import *
 from Psicologia import *
 from Saude import *
 from ServSocial import *
-
+pygame.FULLSCREEN
 
 class Main:
 
@@ -75,7 +75,7 @@ class Main:
 
     # Tela de fundo será branca
     janela = pygame.display.set_mode(
-        (larguraTela, alturaTela)).fill(fundoBranco)
+        (larguraTela, alturaTela), FULLSCREEN).fill(fundoBranco)
 
     screen = pygame.display.get_surface()
     background = pygame.Surface(screen.get_size())
