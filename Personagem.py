@@ -49,6 +49,9 @@ class Personagem:
             if self.posX < 916:
                 self.posX += 10
 
+        if key[pygame.K_ESCAPE]:
+            exit()
+
         print(self.posX);
         print(self.posY);
 
