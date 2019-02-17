@@ -82,9 +82,9 @@ class Main:
     background = background.convert()
     background.fill((0xFF, 0xFF, 0xFF))
 
-    pygame.mixer.music.load('music.mp3')
+    pygame.mixer.music.load('music.ogg')
     pygame.mixer.music.play()
-    
+
     # Loop do jogo
     while execJogo:
         for event in pygame.event.get():
