@@ -82,7 +82,7 @@ class Main:
     background = background.convert()
     background.fill((0xFF, 0xFF, 0xFF))
 
-    pygame.mixer.music.load('music.ogg')
+    pygame.mixer.music.load('Musica/music.ogg')
     pygame.mixer.music.play()
 
     # Loop do jogo
@@ -97,7 +97,7 @@ class Main:
         screen.blit(background, (0, 0))
         # Personagem aparece na tela
 
-                
+        #Verifica se a musica ainda está tocando                
         if (pygame.mixer.music.get_busy()):
             pass
         else:
