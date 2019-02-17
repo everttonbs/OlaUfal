@@ -73,7 +73,7 @@ class Main:
     saude = Saude()
     servSocial = ServSocial()
 
-    # Tela de fundo será branca
+    # Tela de fundo sera branca
     janela = pygame.display.set_mode(
         (larguraTela, alturaTela), FULLSCREEN).fill(fundoBranco)
 
@@ -97,7 +97,7 @@ class Main:
         screen.blit(background, (0, 0))
         # Personagem aparece na tela
 
-        #Verifica se a musica ainda está tocando                
+        #Verifica se a musica ainda esta tocando                
         if (pygame.mixer.music.get_busy()):
             pass
         else:
@@ -106,7 +106,7 @@ class Main:
         Mapa.blit()
         personagem.blit()
 
-    # Encontra a posição do personagem
+    # Encontra a posicao do personagem
     # personagem.posXY();
     #Blocos de cursos
 
@@ -121,7 +121,7 @@ class Main:
             print("Biblioteconomia")
             biblioteconomia.blit()
 
-        elif (personagem.posX == 320 and personagem.posY == 2855):
+        elif (personagem.posX == 320 and personagem.posY == 285):
             print("Saude")
             saude.blit()
 

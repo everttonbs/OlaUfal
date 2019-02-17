@@ -33,10 +33,10 @@ class Fda:
     def texto_curso(self, screen, texto):
 
         lista_palavras = [lista_palavras.split(' ') for lista_palavras in texto.splitlines()]
-        #Texto incia ans coordenas (x, y)
+        #Texto incia nas coordenas (x, y)
         coord_xy = (0, 175)
         space = self.a.size(' ')[0]
-        #Tamanho da tela, necessário para o texto não ultrapassar
+        #Tamanho da tela, necessario para o texto nao ultrapassar
         max_x, max_y = (916, 510)
         x, y = coord_xy
         for palavras in lista_palavras:
@@ -75,8 +75,6 @@ class Fda:
 
 
          
-
-
 
 
         
