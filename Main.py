@@ -73,7 +73,7 @@ class Main:
     saude = Saude()
     servSocial = ServSocial()
 
-    # Tela de fundo será branca
+    # Tela de fundo sera branca
     janela = pygame.display.set_mode(
         (larguraTela, alturaTela), FULLSCREEN).fill(fundoBranco)
 
@@ -81,6 +81,9 @@ class Main:
     background = pygame.Surface(screen.get_size())
     background = background.convert()
     background.fill((0xFF, 0xFF, 0xFF))
+
+    pygame.mixer.music.load('Musica/music.ogg')
+    pygame.mixer.music.play()
 
     # Loop do jogo
     while execJogo:
@@ -94,93 +97,99 @@ class Main:
         screen.blit(background, (0, 0))
         # Personagem aparece na tela
 
+        #Verifica se a musica ainda esta tocando                
+        if (pygame.mixer.music.get_busy()):
+            pass
+        else:
+            pygame.mixer.music.play()
+                
         Mapa.blit()
         personagem.blit()
 
-    # Encontra a posição do personagem
+    # Encontra a posicao do personagem
     # personagem.posXY();
     #Blocos de cursos
 
-        if (personagem.posX == 130 and personagem.posY == 245):
+        if (personagem.posX == 120 and personagem.posY == 215):
             print("FDA")
             fda.blit()
-        elif (personagem.posX == 230 and personagem.posY == 365):
+        elif (personagem.posX == 220 and personagem.posY == 335):
             print("Famed")
             famed.blit()
 
-        elif (personagem.posX == 370 and personagem.posY == 285):
+        elif (personagem.posX == 360 and personagem.posY == 255):
             print("Biblioteconomia")
             biblioteconomia.blit()
 
-        elif (personagem.posX == 330 and personagem.posY == 315):
+        elif (personagem.posX == 320 and personagem.posY == 285):
             print("Saude")
             saude.blit()
 
-        elif (personagem.posX == 340 and personagem.posY == 435):
+        elif (personagem.posX == 330 and personagem.posY == 405):
             print("ICBS")
             icbs.blit()
 
-        elif (personagem.posX == 450 and personagem.posY == 265):
+        elif (personagem.posX == 440 and personagem.posY == 235):
             print("Cedu")
             cedu.blit()
 
-        elif (personagem.posX == 450 and personagem.posY == 345):
+        elif (personagem.posX == 440 and personagem.posY == 315):
             print("Psicologia")
             psicologia.blit()
 
-        elif (personagem.posX == 470 and personagem.posY == 235):
+        elif (personagem.posX == 460 and personagem.posY == 205):
             print("IM")
             im.blit()
 
-        elif (personagem.posX == 520 and personagem.posY == 275):
+        elif (personagem.posX == 510 and personagem.posY == 245):
             print("FEAC")
             feac.blit()
 
-        elif (personagem.posX == 550 and personagem.posY == 225):
+        elif (personagem.posX == 540 and personagem.posY == 195):
             print("Social")
             servSocial.blit()
 
-        elif (personagem.posX == 580 and personagem.posY == 335):
+        elif (personagem.posX == 570 and personagem.posY == 305):
             print("Letras")
             letras.blit()
 
-        elif (personagem.posX == 610 and personagem.posY == 275):
+        elif (personagem.posX == 600 and personagem.posY == 245):
             print("ICHICA")
             ichica.blit()
 
-        elif (personagem.posX == 590 and personagem.posY == 95):
+        elif (personagem.posX == 580 and personagem.posY == 65):
             print("CTEC")
             ctec.blit()
 
-        elif (personagem.posX == 580 and personagem.posY == 15):
+        elif (personagem.posX == 570 and personagem.posY == -5):
             print("Arquitetura")
             arquitetura.blit()
 
-        elif (personagem.posX == 520 and personagem.posY == 155):
+        elif (personagem.posX == 510 and personagem.posY == 135):
             print("IQB")
             iqb.blit()
 
-        elif (personagem.posX == 490 and personagem.posY == 75):
+        elif (personagem.posX == 480 and personagem.posY == 45):
             print("COS")
             cos.blit()
 
-        elif (personagem.posX == 440 and personagem.posY == 185):
+        elif (personagem.posX == 410 and personagem.posY == 155):
             print("IF")
             fisica.blit()
 
-        elif (personagem.posX == 400 and personagem.posY == 85):
+        elif (personagem.posX == 390 and personagem.posY == 55):
             print("IC")
             ic.blit()
 
-        elif (personagem.posX == 410 and personagem.posY == 155):
+        elif (personagem.posX == 380 and personagem.posY == 125):
             print("ICAT")
             icat.blit()
 
-        elif (personagem.posX == 380 and personagem.posY == 185):
+        elif (personagem.posX == 370 and personagem.posY == 155):
             print("Geografia")
             geografia.blit()
 
-        elif (personagem.posX == 230 and personagem.posY == 125):
+        elif (personagem.posX == 220 and personagem.posY == 95):
             print("Ed. Fis")
             edFisica.blit()
 
