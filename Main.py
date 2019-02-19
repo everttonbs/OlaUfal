@@ -82,27 +82,33 @@ class Main:
     background = background.convert()
     background.fill((0xFF, 0xFF, 0xFF))
 
+    FPS = 60
+    FPSCLOCK = pygame.time.Clock()
+
     pygame.mixer.music.load('Musica/music.ogg')
     pygame.mixer.music.play()
+
+
 
     # Loop do jogo
     while execJogo:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 execJogo = False
-            elif event.type == KEYDOWN:
-                personagem.move()
+
+        keys = pygame.key.get_pressed()
+        personagem.move(keys)
 
         # Atualiza a tela
         screen.blit(background, (0, 0))
         # Personagem aparece na tela
 
-        #Verifica se a musica ainda esta tocando                
+        #Verifica se a musica ainda esta tocando
         if (pygame.mixer.music.get_busy()):
             pass
         else:
             pygame.mixer.music.play()
-                
+
         Mapa.blit()
         personagem.blit()
 
@@ -199,10 +205,7 @@ class Main:
 
 
         pygame.display.flip()
-
         pygame.display.update()
+        FPSCLOCK.tick(FPS)
 
     pygame.quit()
-
-
-

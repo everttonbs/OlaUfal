@@ -20,6 +20,9 @@ class Personagem:
         # Definindo imagem atual
         self.current_action = 'down'
         self.current_frame = 0
+        self.animation_speed = 10
+        self.speed_counter = 0
+        self.delta = 2
 
     def blit(self):
         self.personagem_surface = self.sprites[self.current_action][self.current_frame]
@@ -27,29 +30,30 @@ class Personagem:
         screen = pygame.display.get_surface()
         screen.blit(self.personagem_surface, (self.posX, self.posY))
 
-    def move(self):
-        pygame.event.pump()
-        key = pygame.key.get_pressed()
-        if key[pygame.K_UP]:
+    def move(self, keys):
+        # pygame.event.pump()
+        # key = pygame.key.get_pressed()
+
+        if keys[pygame.K_UP]:
             self.updateAction('up')
             if self.posY > 0:
-                self.posY += -10
-        if key[pygame.K_DOWN]:
+                self.posY += -self.delta
+        elif keys[pygame.K_DOWN]:
             self.updateAction('down')
             if self.posY < 510:
-                self.posY += 10
-        if key[pygame.K_LEFT]:
+                self.posY += self.delta
+        elif keys[pygame.K_LEFT]:
             self.updateAction('left')
             self.current_action = 'left'
             if self.posX > 0:
-                self.posX += -10
-        if key[pygame.K_RIGHT]:
+                self.posX += -self.delta
+        elif keys[pygame.K_RIGHT]:
             self.updateAction('right')
             self.current_action = 'right'
             if self.posX < 916:
-                self.posX += 10
+                self.posX += self.delta
 
-        if key[pygame.K_ESCAPE]:
+        if keys[pygame.K_ESCAPE]:
             exit()
 
         print(self.posX)
@@ -60,4 +64,8 @@ class Personagem:
             self.current_action = new_action
             self.current_frame = 0
         else:
-            self.current_frame = (self.current_frame + 1) % self.frames_per_action
+            if( self.speed_counter < self.animation_speed ):
+                self.speed_counter += 1
+            else:
+                self.speed_counter = 0
+                self.current_frame = (self.current_frame + 1) % self.frames_per_action
