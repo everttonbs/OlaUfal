@@ -116,7 +116,7 @@ class Main:
     # personagem.posXY();
     #Blocos de cursos
 
-        if (personagem.posX == 120 and personagem.posY == 215):
+        if (personagem.posX >= 110 and personagem.posX <= 130 and personagem.posY >= 205 and personagem.posY <= 225):
             print("FDA")
             fda.blit()
         elif (personagem.posX == 220 and personagem.posY == 335):
