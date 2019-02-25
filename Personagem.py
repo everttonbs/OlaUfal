@@ -55,9 +55,8 @@ class Personagem:
 
         if keys[pygame.K_ESCAPE]:
             exit()
-
-        print(self.posX)
-        print(self.posY)
+        if keys[pygame.K_SPACE]:
+            print('Posição em FDA, na posição X:{}, Y:{}'.format(self.posX, self.posY))
 
     def updateAction(self, new_action):
         if new_action != self.current_action:
