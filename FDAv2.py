@@ -13,7 +13,11 @@ class Fda:
         # Instanciando o UI de diálogo
         self.dialog_ui = DialogUI()
         self.dialog_ui.create_choices(['1 - Descrição', '2 - Area atuação', '3 - Fotos'])
-
+        self.dialog_ui.create_text("Tendência nacional dos cursos jurídicos é o interesse crescente em concursos públicos.\
+Por essa razão, o projeto pedagógico do curso privilegiou a formação em Direito público.\
+Outra vertente do curso de Direito da UFAL é a ênfase em conteúdos que capacitem o \
+profissional a atuar em vários espaços de exercício de cidadania, de movimentos populares e \
+de organizações não governamentais, em demanda crescente de serviços jurídicos próprios.")
 
     def input(self, keys):
         if keys[pygame.K_1]:
