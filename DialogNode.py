@@ -36,3 +36,9 @@ class DialogNode:
         self.node_labels.clear()
         self.node_pointers.append(pointer_id)
         self.type = NODE_TYPE.LINEAR
+
+    def check_pointer(self, pointer_index):
+        if pointer_index < len(self.node_pointers):
+            return self.node_pointers[pointer_index]
+        else:
+            return -1

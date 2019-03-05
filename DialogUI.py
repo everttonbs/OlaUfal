@@ -69,7 +69,6 @@ class DialogUI:
 
     ####################################################################
 
-
     def draw_options(self):
         for index, choice in enumerate(self.choices):
             rendered = self.font_obj.render(choice, 10, self.fg_color)
@@ -83,12 +82,13 @@ class DialogUI:
 
     def draw_text(self):
         # Separa a string numa lsita de caracteres
-        chars = list(self.text)
+        chars = self.text.split()
         # Define as coordenadas iniciais do texto
         coord_xy = (10, 10)
         x, y = coord_xy[0], coord_xy[1]
 
-        for char in chars:
+        for schar in chars:
+            char = schar + ' '
             rendered = self.font_obj.render(char, 10, self.fg_color)
             font_w, font_h = rendered.get_size()
 
@@ -123,21 +123,9 @@ class DialogUI:
         self.draw_text_window()
 
 ##################################################################
-
-    def entered_input(self):
-        return false
-
     def set_option(self, index):
         self.current_choice = index
 
-    def input(self, keys):
-        if keys[pygame.K_1]:
-            self.dialog_ui.set_option(0)
-        elif keys[pygame.K_2]:
-            self.dialog_ui.set_option(1)
-        elif keys[pygame.K_3]:
-            self.dialog_ui.set_option(2)
-
-    def update(self):
+    def update(self, selection_index):
         # Cuide de animações
         pass

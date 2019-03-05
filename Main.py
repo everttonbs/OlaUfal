@@ -13,7 +13,7 @@ from COS import *
 from CTEC import *
 from EdFis import *
 from Famed import *
-from FDAv2 import *
+from FDA import *
 from FEAC import *
 from Geografia import *
 from IC import *
@@ -93,7 +93,8 @@ class Main:
 
     # Loop do jogo
     while execJogo:
-        for event in pygame.event.get():
+        events = pygame.event.get()
+        for event in events:
             if event.type == pygame.QUIT:
                 execJogo = False
 
@@ -117,9 +118,8 @@ class Main:
     # Encontra a posicao do personagem
     # personagem.posXY();
     #Blocos de cursos
-
         if(personagem.posX >= 110 and personagem.posX <= 130 and personagem.posY >= 205 and personagem.posY <= 225):
-            fda.input(keys)
+            fda.input(keys, events)
             fda.update()
             fda.draw()
         #elif (personagem.posX == 220 and personagem.posY == 335):
