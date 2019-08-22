@@ -119,9 +119,7 @@ class Main:
     # personagem.posXY();
     #Blocos de cursos
         if(personagem.posX >= 110 and personagem.posX <= 130 and personagem.posY >= 205 and personagem.posY <= 225):
-            fda.input(keys, events)
-            fda.update()
-            fda.draw()
+            fda.blit()
         #elif (personagem.posX == 220 and personagem.posY == 335):
         elif(personagem.posX >= 208 and personagem.posX <= 228 and personagem.posY >= 325 and personagem.posY <= 345):
             # print("Famed")
